@@ -1,0 +1,14 @@
+node_modules/
+.wrangler/
+.dev.vars
+.github/
+.node-version
+.gitignore
+.assetsignore
+scripts/
+src/
+wrangler.toml
+package.json
+package-lock.json
+CNAME
+README*

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tlagdle - Conlang Club @ UCSD</title>
+<meta name="description" content="Tlagdle is a daily word game in Tlag, the constructed language of Conlang Club at UC San Diego. Guess the hidden word in six tries.">
+<link rel="icon" href="https://conlangatucsd.com/assets/logo.png" type="image/png">
+<link rel="stylesheet" href="https://conlangatucsd.com/styles.css">
+<link rel="stylesheet" href="tlagdle.css">
+<link rel="canonical" href="https://tlagdle.conlangatucsd.com/">
+<meta property="og:title" content="Tlagdle, a daily Tlag word game">
+<meta property="og:description" content="Guess the hidden Tlag word in six tries. Every guess has to be a real Tlag word.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://conlangatucsd.com/assets/logo.png">
+<meta property="og:url" content="https://tlagdle.conlangatucsd.com/">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+
+<div data-include="header">
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="https://conlangatucsd.com/">
+      <img src="https://conlangatucsd.com/assets/logo.png" alt="Conlang Club at UCSD logo" width="46" height="46">
+      <span class="brand-text">Conlang Club<span>@ UC San Diego</span></span>
+    </a>
+    <ul class="nav-links nav-links--static">
+      <li><a href="https://conlangatucsd.com/">Home</a></li>
+      <li><a href="https://conlangatucsd.com/tlag/">Tlag</a></li>
+      <li><a href="https://conlangatucsd.com/tools/">Tools</a></li>
+    </ul>
+  </nav>
+</header>
+</div>
+
+<main>
+  <div class="page-banner tg-banner">
+    <div class="wrap">
+      <h1>Tlagdle</h1>
+      <p>One hidden Tlag word a day. Six guesses, and every guess has to be a real Tlag word.</p>
+    </div>
+  </div>
+
+  <section class="tg">
+    <div class="col">
+      <p id="msg" role="status">Loading today's word…</p>
+      <noscript><p>Tlagdle needs JavaScript to run.</p></noscript>
+
+      <div id="game" hidden>
+        <p id="meta" class="meta"></p>
+        <ul id="hints" class="hints"></ul>
+        <div id="board" class="board" role="grid" aria-label="Guess board"></div>
+        <div id="sugg" class="sugg" aria-live="polite"></div>
+
+        <details id="list" class="wl">
+          <summary>Browse every applicable word</summary>
+          <input id="q" type="search" placeholder="Search Tlag or English" aria-label="Search the word list" autocomplete="off">
+          <ul id="words"></ul>
+        </details>
+
+        <div id="kb" class="kb"></div>
+        <section id="result" class="result" hidden></section>
+      </div>
+
+      <details id="how" class="how" open>
+        <summary>How to play</summary>
+        <p>Find the hidden Tlag word in six guesses. Each guess must be a real word from the <a href="https://conlangatucsd.com/tlag/gloss/">Tlag dictionary</a> with the same number of tiles.</p>
+        <p><strong>aa</strong>, <strong>ts</strong> and <strong>tl</strong> each count as one tile.</p>
+        <div class="sample"><span class="tile s2">m</span><span class="tile">o</span><span class="tile">k</span><span class="tile">r</span><span class="tile">o</span></div>
+        <p>Purple: right tile, right place.</p>
+        <div class="sample"><span class="tile">m</span><span class="tile s1">o</span><span class="tile">k</span><span class="tile">r</span><span class="tile">o</span></div>
+        <p>Gold: in the word, wrong place.</p>
+        <div class="sample"><span class="tile">m</span><span class="tile">o</span><span class="tile s0">k</span><span class="tile">r</span><span class="tile">o</span></div>
+        <p>Gray: not in the word.</p>
+        <p>You don't need to know Tlag already. The word list shows what each word means, and clues about the answer unlock as you guess.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer">
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom"><span>&copy; <span data-year>2026</span> Conlang Club @ UCSD</span></div>
+  </div>
+</footer>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="https://conlangatucsd.com/script.js"></script>
+<script src="tlagdle.js"></script>
+</body>
+</html>
